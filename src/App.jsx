@@ -3,8 +3,10 @@ import reactLogo from './assets/taonLogo.png'
 import './App.scss'
 import UsersList from './comps/UsersList'
 
-import { useQuery } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
+
 import { getMotosData } from './api'
+import { setVinculo } from './api/botIndex'
 
 function App() {
   const motoData = useQuery('motos', getMotosData, {
@@ -12,10 +14,10 @@ function App() {
     refetchIntervalInBackground: true,
   })
 
-useEffect(() => {
-console.log(motoData.isFetching)
-}, [motoData.isFetching])
 
+const test = () =>{
+ console.log(setVinc.data)
+}
   
   return (
     <div className="App">
@@ -27,7 +29,9 @@ console.log(motoData.isFetching)
       <div className="content">
 
       <div className="options">
-        
+        <div className="optItem">
+        <button onClick={setVinculo}>Alterar Vinculos</button>
+        </div>
       </div>
       {motoData.isSuccess && 
       <UsersList bikerData={motoData?.data?.motos} isFetching={ motoData.isFetching} />

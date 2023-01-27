@@ -1,9 +1,8 @@
 const puppeteer = require('puppeteer')
-const axios = require('axios')
 
 ;(async () => {
   const sendStatus = async () => {
-    const browser = await puppeteer.launch({ headless: false })
+    const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
     await page.goto('https://www.taon.app.br/bandeira/tarifaBandeira')
 
