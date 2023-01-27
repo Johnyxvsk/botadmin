@@ -1,0 +1,94 @@
+.usersList {
+  width: 500px;
+  margin-left: 20px;
+  .MuiPaper-root {
+    color: black;
+  }
+  td,
+  th {
+    border: 1px solid #9e9e9e;
+  }
+  .MuiTableRow-root:nth-child(even) {
+    background-color: #dddddd;
+  }
+  i {
+    color: #181818;
+    cursor: pointer;
+  }
+  .statusRow {
+    display: flex;
+    justify-content: center;
+    i {
+      font-size: 28px;
+    }
+  }
+  .typeRow {
+    display: flex;
+    justify-content: center;
+    .typeIcon {
+      position: relative;
+      font-size: 12px;
+      font-weight: bold;
+      left: 15px;
+      top: -4px;
+    }
+    i {
+      position: relative;
+      left: -10px;
+      font-size: 30px;
+    }
+  }
+
+  .MaterialTableToolbar {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    background-color: #aeadad;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 0px;
+    .toolItem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 3px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      &:hover {
+        background-color: #c7c5c5;
+      }
+    }
+    .janelaFiltro {
+      position: absolute;
+      top: 35px;
+      left: 2px;
+      display: flex;
+      width: 120px;
+      flex-direction: column;
+      z-index: 98;
+      .filterOption {
+        display: flex;
+        padding: 2px 5px 2px 8px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(250, 250, 250);
+        border: 1px solid rgb(122, 122, 122);
+        font-size: 15px;
+        z-index: 99;
+        cursor: pointer;
+        &:hover {
+          border-color: rgb(38, 74, 165);
+          i {
+            color: rgb(38, 74, 165);
+          }
+        }
+      }
+      .checked {
+        background-color: rgb(179, 179, 179);
+      }
+    }
+  }
+}
