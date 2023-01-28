@@ -7,13 +7,18 @@ const botApi = axios.create({
 })
 
 export const setVinculo = async () => {
+  const res = await botApi.post("/bot", {
+    type: `remove`,
+    id: 678414,
+  });
+  console.log(res.data);
+  return res.data;
+};
 
-  const res = await botApi.post('/bot', { 
-    "possui_vinculo": true,
-    "vinculo": "T"
-  })
-    console.log(res.data.response)
-  return res.data
-}
-
-
+export const pausePlay = async (selectType) => {
+  const res = await botApi.post("/botPause", {
+    type: selectType,
+  });
+  console.log(res.data);
+  return res.data;
+};
