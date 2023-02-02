@@ -22,3 +22,11 @@ export const pausePlay = async (selectType) => {
   console.log(res.data);
   return res.data;
 };
+
+export const checkStatus = async () => {
+  const res = await botApi.post("/botCheckStatus", {
+    type: "checkStatus",
+  });
+  console.log(res.data);
+  return res.data;
+};

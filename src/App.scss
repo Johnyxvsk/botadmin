@@ -29,7 +29,8 @@
 .logo {
   height: 5em;
   margin: 10PX;
-  border-radius: 50%
+  border-radius: 50%;
+
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -65,7 +66,21 @@
 .options{
   display: flex;
   flex-direction: column;
+
 }
-.optItem{
-  padding: 10px;
+.options div{
+  margin: 5px;
+}
+.pausas{
+  display: flex;
+}
+.pausas div {
+  display: flex;
+  flex-direction: column;
+}
+.pausas button{
+  font-size: large;
+  font-weight: 400;
+  padding: 20px;
+  margin: 5px;
 }

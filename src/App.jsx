@@ -6,7 +6,7 @@ import UsersList from './comps/UsersList'
 import { useQuery, useMutation } from 'react-query'
 
 import { getMotosData } from './api'
-import { setVinculo, pausePlay } from "./api/botIndex";
+import { setVinculo, pausePlay, checkStatus } from "./api/botIndex";
 
 function App() {
   const motoData = useQuery("motos", getMotosData, {
@@ -31,13 +31,37 @@ function App() {
             <button onClick={setVinculo}>Alterar Vinculos</button>
           </div>
           <div className="optItem">
-            <button onClick={setVinculo}>Aumentar/Diminuir Dinamica</button>
+            <button onClick={checkStatus}>checkStatus</button>
           </div>
-          <div className="optItem">
-            <button onClick={() => pausePlay("pausar")}>Pausar</button>
-            <button onClick={() => pausePlay("playSemDinamica")}>
-              Play Sem Dinamica
-            </button>
+          <div className="pausas">
+            <div>
+              <button
+                style={{ backgroundColor: "#b90d0d" }}
+                onClick={() => pausePlay("pausaComp")}
+              >
+                Pausa Completa
+              </button>
+              <button
+                style={{ backgroundColor: "yellow" }}
+                onClick={() => pausePlay("pausaParc")}
+              >
+                Pausa Parcial
+              </button>
+            </div>
+            <div>
+              <button
+                style={{ backgroundColor: "blue" }}
+                onClick={() => pausePlay("playSemDinamica")}
+              >
+                Play Sem Dinamica
+              </button>
+              <button
+                style={{ backgroundColor: "green" }}
+                onClick={() => pausePlay("playDinamica")}
+              >
+                Play Com Dinamica
+              </button>
+            </div>
           </div>
 
           {motoData.isLoading && (

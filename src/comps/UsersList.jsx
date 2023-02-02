@@ -142,9 +142,9 @@ const UsersList = ({ bikerData }) => {
     pageSize: 20,
     padding: "dense",
   };
-  useEffect(() => {
-    console.log(bikerData);
-  }, [bikerData]);
+  // useEffect(() => {
+  //   console.log(bikerData);
+  // }, [bikerData]);
 
   useEffect(() => {
     filters.forEach((item) => {
